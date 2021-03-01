@@ -39,6 +39,11 @@ function promptUser(){
             name:"github"
         },
         {
+            type:"input",
+            message:"Installation instructions:",
+            name:"install"
+        },
+        {
             type:"list",
             message:"Do you have a URL to your screenshot?",
             name:"githubScreenshotquestion",
@@ -54,6 +59,23 @@ function promptUser(){
             when: function (answers){
                 return answers.githubScreenshotquestion !== 'No';
             }
+        },
+        {
+            type:"list",
+            message:"Do you have a URL to your video?",
+            name:"video",
+            choices:[
+                "Yes",
+                "No"
+            ]
+        },
+        {
+            type:"input",
+            message:"video URL?:",
+            name:"videoanswer",
+            when: function (answers){
+                return answers.video !== 'No';
+            }
         }
 
       ]);
@@ -62,28 +84,30 @@ function promptUser(){
     function generateMD(answers){
         var profile=("https://github.com/"+answers.github)
         var screencap = ("![image]("+ answers.githubScreenshot + ")")
+        var videocap = ("![video]("+ answers.videoanswer + ")")
     return `
-    # ${answers.title}
-      ${answers.badge ==="Apache" ? "Apache"+""+'<br>'+""+"[![GitHub License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)" : answers.badge ==="MIT" ? "MIT"+""+'<br>'+""+"[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)" : answers.badge==="IBM" ? "IBM"+""+'<br>'+""+"[![License: IPL 1.0](https://img.shields.io/badge/License-IPL%201.0-blue.svg)](https://opensource.org/licenses/IPL-1.0)" : "Perl"+""+'<br>'+""+"[![License: Artistic-2.0](https://img.shields.io/badge/License-Perl-0298c3.svg)](https://opensource.org/licenses/Artistic-2.0)"}
-    ## Description 
-      ${answers.description}
-    ## Table of contents
+## Project Title
+    *${answers.title}
+     
+## Description 
+    *${answers.description}
+## Table of contents
     * [Description](#description)
     * [Installation](#installation)
     * [Usage](#usage)
     * [License](#license)
-    * [Contributing](#contributing)
     * [Tests](#tests)
     * [Questions](#questions)
-    ## License
-            ${answers.badge}
-    ## Questions
-    For questions regarding this application please contact me at:
-        - E-mail: ${answers.Email}
-        - Github: ${profile}
-        - Screenshot: ${screencap}
-
-        `; 
+## Installation
+    * ${answers.install}
+## License
+     ${answers.badge ==="Apache" ? "Apache"+""+'<br>'+""+"![badge](https://img.shields.io/badge/License-Apache%202.0-blue.svg)" : answers.badge ==="MIT" ? "MIT"+""+'<br>'+""+"![badge](https://img.shields.io/badge/License-MIT-yellow.svg)" : answers.badge==="IBM" ? "IBM"+""+'<br>'+""+"![badge](https://img.shields.io/badge/License-IPL%201.0-blue.svg)" : "Perl"+""+'<br>'+""+"![badge](https://img.shields.io/badge/License-Perl-0298c3.svg)"}
+## Questions
+For questions regarding this application please contact me at:
+    - E-mail: ${answers.Email}
+    - Github: ${profile}
+    - Screenshot: ${screencap}
+    - walktrough: ${videocap}`; 
     }
 
     async function init() {
