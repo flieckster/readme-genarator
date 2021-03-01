@@ -14,7 +14,7 @@
 ## Installation
     * npm i inquirer 
 ## License
-     MIT<br>![badge](https://img.shields.io/badge/License-MIT-yellow.svg)
+    ![badge](https://img.shields.io/badge/License-MIT-yellow.svg)
 ## Questions
 For questions regarding this application please contact me at:
     - E-mail: brianflieck@gmail.com
