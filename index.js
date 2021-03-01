@@ -38,11 +38,17 @@ function promptUser(){
             message:"provide your github ID:",
             name:"github"
         },
+        {
+            type:"input",
+            message:"provide URL to your screenshot:",
+            name:"githubScreenshot"
+        },
       ]);
     } 
 
     function generateMD(answers){
         var profile=("https://github.com/"+answers.github)
+        var screencap = ("![imagename]"+ answers.githubScreenshot)
     return `
     # ${answers.title}
     ${answers.badge ==="Apache" ? "Apache"+""+'<br>'+""+"[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)" : answers.badge ==="MIT" ? "MIT"+""+'<br>'+""+"[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)" : answers.badge==="IBM" ? "IBM"+""+'<br>'+""+"[![License: IPL 1.0](https://img.shields.io/badge/License-IPL%201.0-blue.svg)](https://opensource.org/licenses/IPL-1.0)" : "Perl"+""+'<br>'+""+"[![License: Artistic-2.0](https://img.shields.io/badge/License-Perl-0298c3.svg)](https://opensource.org/licenses/Artistic-2.0)"}
@@ -60,19 +66,20 @@ function promptUser(){
             ${answers.badge}
     ## Questions
     For questions regarding this application please contact me at:
-        - E-mail ${answers.Email}
-        - Github:
-        <${profile}>
+        - E-mail: ${answers.Email}
+        - Github: ${profile}
+        - Screenshot: ${screencap}
+
         `; 
     }
 
     async function init() {
-        console.log("Welcome to my README generator!");
+        console.log("Welcome to the README generator!");
         try{
             const answers=await promptUser();
             const md=generateMD(answers);
             await writeFileAsync("README.md",md);
-            console.log("Success writing to README.md !!");
+            console.log("Success writing to README.md file");
         } catch(err){
             console.log(err);
         }
