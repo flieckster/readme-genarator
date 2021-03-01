@@ -1,6 +1,6 @@
 
     # Readme Genarator
-    MIT<br>[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+    MIT<br>[![Github License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
     ## Description 
          this is a application written in javascript using Node.js and inqueier from NPM to ask a series of questions to the user to genarate a Readme.md file. 
     ## Table of contents
