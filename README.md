@@ -18,5 +18,4 @@
         - E-mail: brianflieck@gmail.com
         - Github: https://github.com/flieckster
         - Screenshot: ![image](https://user-images.githubusercontent.com/9003865/109523207-195da400-7a7d-11eb-9193-7bf6d8295656.png)
-
-        
+			![image] (http://g.recordit.co/B2IPEkpiu1.gif)        
