@@ -3,7 +3,7 @@
     *README Generator
      
 ## Description 
-    *this is a application written in javascript using Node.js and inqueier from NPM to ask a series of questions to the user to genarate a Readme.md file.
+    *this is a application written in javascript using Node.js and inqueier from NPM to ask a series of questions to the user to genarate a Readme.md file. 
 ## Table of contents
     * [Description](#description)
     * [Installation](#installation)
@@ -12,9 +12,9 @@
     * [Tests](#tests)
     * [Questions](#questions)
 ## Installation
-    * npm i inquirer 
+    *  npm i inquirer 
 ## License
-     MIT<br>![badge](https://img.shields.io/badge/License-MIT-yellow.svg)
+     ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 ## Questions
 For questions regarding this application please contact me at:
     - E-mail: brianflieck@gmail.com

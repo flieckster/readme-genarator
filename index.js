@@ -101,7 +101,7 @@ function promptUser(){
 ## Installation
     * ${answers.install}
 ## License
-     ${answers.badge ==="Apache" ? "Apache"+""+'<br>'+""+"![badge](https://img.shields.io/badge/License-Apache%202.0-blue.svg)" : answers.badge ==="MIT" ? "MIT"+""+'<br>'+""+"![badge](https://img.shields.io/badge/License-MIT-yellow.svg)" : answers.badge==="IBM" ? "IBM"+""+'<br>'+""+"![badge](https://img.shields.io/badge/License-IPL%201.0-blue.svg)" : "Perl"+""+'<br>'+""+"![badge](https://img.shields.io/badge/License-Perl-0298c3.svg)"}
+     ${answers.badge ==="Apache" ? "![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)" : answers.badge ==="MIT" ? "![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)" : answers.badge==="IBM" ? "![License: IPL 1.0](https://img.shields.io/badge/License-IPL%201.0-blue.svg)" : "![License: Artistic-2.0](https://img.shields.io/badge/License-Perl-0298c3.svg)"}
 ## Questions
 For questions regarding this application please contact me at:
     - E-mail: ${answers.Email}
