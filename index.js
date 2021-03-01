@@ -35,14 +35,27 @@ function promptUser(){
         },
         {
             type:"input",
-            message:"provide your github ID:",
+            message:"Provide your github ID:",
             name:"github"
         },
         {
-            type:"input",
-            message:"provide URL to your screenshot:",
-            name:"githubScreenshot"
+            type:"list",
+            message:"Do you have a URL to your screenshot?",
+            name:"githubScreenshotquestion",
+            choices:[
+                "Yes",
+                "No"
+            ]
         },
+        {
+            type:"input",
+            message:"URl?:",
+            name:"githubScreenshot",
+            when: function (answers){
+                return answers.githubScreenshotquestion !== 'No';
+            }
+        }
+
       ]);
     } 
 
